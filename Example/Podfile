@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AKError_Example' do
+  pod 'AKError', :path => '../'
+
+  target 'AKError_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
