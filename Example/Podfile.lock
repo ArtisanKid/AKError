@@ -1,0 +1,24 @@
+PODS:
+  - AKError (0.1.0):
+    - FMDB (= 2.6.2)
+    - YYModel
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AKError (from `../`)
+
+EXTERNAL SOURCES:
+  AKError:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AKError: 6cdb70b83ec667cb5a0d5f65a205073308a0d6a7
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 4be788cb2423258a9e0b5dab0312a718184f4835
+
+COCOAPODS: 1.0.1
