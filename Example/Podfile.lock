@@ -1,10 +1,12 @@
 PODS:
   - AKError (0.1.0):
     - FMDB (= 2.6.2)
+    - Reachability (= 3.2)
     - YYModel
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - Reachability (3.2)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -15,8 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AKError: 6cdb70b83ec667cb5a0d5f65a205073308a0d6a7
+  AKError: fac854d6d533699d8036904e0fd76e4c82816a29
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 4be788cb2423258a9e0b5dab0312a718184f4835

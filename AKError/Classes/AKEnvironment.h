@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AKEnvironmentProtocol.h"
 #import <CoreTelephony/CTCarrier.h>
-#import "AKNetworkReachabilityManager.h"
+#import <Reachability/Reachability.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  网络类型
  */
-@property (nonatomic, assign, readonly) AKNetworkReachabilityStatus networkType;
+@property (nonatomic, assign, readonly) NetworkStatus networkType;
 
 /**
  *  此字段的值，取决于networkType和carrierType + carrierStatus

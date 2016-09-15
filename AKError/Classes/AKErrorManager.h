@@ -16,9 +16,9 @@ typedef NS_ENUM(NSUInteger, AKErrorUploadWhen) {
     AKErrorUploadWhenEnterBackground
 };
 
-typedef BOOL(^AKErrorUploadBlock)(NSArray<NSDictionary *> *errors);
-
 NS_ASSUME_NONNULL_BEGIN
+
+typedef BOOL(^AKErrorUploadBlock)(NSArray<NSDictionary *> *errors);
 
 @interface AKErrorManager : NSObject
 

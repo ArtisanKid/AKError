@@ -19,7 +19,7 @@
 @interface AKEnvironment ()
 
 @property (nonatomic, strong) CTTelephonyNetworkInfo *telephonyNetwork;
-@property (nonatomic, strong) AKNetworkReachabilityManager *reachability;
+@property (nonatomic, strong) Reachability *reachability;
 
 @property (nonatomic, strong) CTCarrier *innerCarrier;
 @property (nonatomic, strong) UIDevice *innerDevice;
@@ -40,8 +40,8 @@
         environment.innerDevice = [UIDevice currentDevice];
         environment.innerProcess = [NSProcessInfo processInfo];
         
-        environment.reachability = [AKNetworkReachabilityManager sharedManager];
-        [environment.reachability startMonitoring];
+        environment.reachability = [Reachability reachabilityWithHostName:@"http://www.apple.com"];
+        [environment.reachability startNotifier];
     });
     return environment;
 }
@@ -213,16 +213,15 @@
     return _radioAccessName;
 }
 
-- (AKNetworkReachabilityStatus)networkType {
-    return self.reachability.networkReachabilityStatus;
+- (NetworkStatus)networkType {
+    return self.reachability.currentReachabilityStatus;
 }
 
 - (NSString *)networkName {
     switch (self.networkType) {
-        case AKNetworkReachabilityStatusUnknown: { return @"网络状态未知"; }
-        case AKNetworkReachabilityStatusNotReachable: { return @"未连接网络"; }
-        case AKNetworkReachabilityStatusReachableViaWWAN: { return self.radioAccessName; }
-        case AKNetworkReachabilityStatusReachableViaWiFi: { return @"已连接WiFi"; }
+        case NotReachable: { return @"未连接网络"; }
+        case ReachableViaWWAN: { return self.radioAccessName; }
+        case ReachableViaWiFi: { return @"已连接WiFi"; }
     }
     return @"网络状态未知";
 }

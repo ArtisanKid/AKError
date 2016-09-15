@@ -41,4 +41,5 @@ TODO: Add long description of the pod here.
   
   s.dependency 'FMDB', '2.6.2'
   s.dependency 'YYModel'
+  s.dependency 'Reachability', '3.2'
 end
