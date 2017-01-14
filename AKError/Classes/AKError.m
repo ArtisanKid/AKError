@@ -179,6 +179,7 @@
                            @"exception" : self.exception ? [self.exception description] : @"",
                            @"errorID" : self.errorID ? self.errorID : @"",
                            @"domain" : @(self.domain),
+                           @"subDomain" : @(self.subDomain),
                            @"code" : @(self.code),
                            @"subCode" : @(self.subCode),
                            @"detail" : self.detail ? self.detail : @"",

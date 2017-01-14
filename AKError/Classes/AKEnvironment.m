@@ -267,34 +267,34 @@
 - (NSUInteger)freeMemory {
     vm_statistics_data_t vm_stat;
     mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(natural_t);
-    vm_size_t pagesize;
+    vm_size_t pageSize;
     
     mach_port_t host_port = mach_host_self();
-    host_page_size(host_port, &pagesize);
+    host_page_size(host_port, &pageSize);
     kern_return_t return_t = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
     if (return_t != KERN_SUCCESS) {
         AKErrorLog(@"Failed to fetch vm statistics 返回值：%@", @(return_t));
     }
     
     /* Stats in bytes */ 
-    natural_t mem_free = vm_stat.free_count * pagesize;
+    natural_t mem_free = vm_stat.free_count * pageSize;
     return mem_free;
 }
 
 - (NSUInteger)usedMemory {
     vm_statistics_data_t vm_stat;
     mach_msg_type_number_t host_size = sizeof(vm_statistics_data_t) / sizeof(natural_t);
-    vm_size_t pagesize;
+    vm_size_t pageSize;
     
     mach_port_t host_port = mach_host_self();
-    host_page_size(host_port, &pagesize);
+    host_page_size(host_port, &pageSize);
     kern_return_t return_t = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
     if (return_t != KERN_SUCCESS) {
         AKErrorLog(@"Failed to fetch vm statistics 返回值：%@", @(return_t));
     }
     
     /* Stats in bytes */ 
-    natural_t mem_used = (vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count) * pagesize;
+    natural_t mem_used = (vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count) * pageSize;
     return mem_used;
 }
 

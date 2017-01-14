@@ -12,7 +12,7 @@
 #import "AKEUserProtocol.h"
 
 typedef NS_ENUM(NSUInteger, AKErrorModule) {
-    AKErrorModuleNull = NSUIntegerMax,
+    AKErrorModuleNone = 0,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -60,6 +60,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  功能域
  */
 @property (nonatomic, assign) AKErrorDomain domain;
+
+/**
+ *  功能子域
+ */
+@property (nonatomic, assign) AKErrorSubDomain subDomain;
 
 /**
  *  错误码

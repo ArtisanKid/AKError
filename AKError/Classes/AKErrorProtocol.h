@@ -10,12 +10,17 @@
 #import "AKEnvironmentProtocol.h"
 
 typedef NS_ENUM(NSUInteger, AKErrorDomain) {
-    AKErrorDomainNull = 0,
-    AKErrorDomainUI = 1,/**<视图*/
+    AKErrorDomainNone = 0,
+    AKErrorDomainUI,/**<视图*/
     AKErrorDomainNetwork,/**<网络*/
     AKErrorDomainDatabase,/**<数据库*/
     AKErrorDomainFile,/**<文件*/
-    AKErrorDomainLocation/**<定位*/
+    AKErrorDomainLocation,/**<定位*/
+    AKErrorDomainBluetooth,/**<蓝牙*/
+};
+
+typedef NS_ENUM(NSUInteger, AKErrorSubDomain) {
+    AKErrorSubDomainNone = 0,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -63,6 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  功能域
  */
 @property (nonatomic, assign) AKErrorDomain domain;
+
+/**
+ *  功能子域
+ */
+@property (nonatomic, assign) AKErrorSubDomain subDomain;
 
 /**
  *  错误码
