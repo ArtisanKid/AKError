@@ -240,7 +240,7 @@
     return totalFreeSpace;
 }
 
-//ROM使用情况 http://stackoverflow.com/questions/5712527/how-to-detect-total-available-free-disk-space-on-the-iphone-ipad-device
+//Disk使用情况 http://stackoverflow.com/questions/5712527/how-to-detect-total-available-free-disk-space-on-the-iphone-ipad-device
 
 - (NSUInteger)usedDisk {
     static CGFloat totalSpace = 0.f;
