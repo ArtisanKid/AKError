@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "AKEnvironmentProtocol.h"
 
+typedef NS_ENUM(NSUInteger, AKErrorModule) {
+    AKErrorModuleNone = 0,
+};
+
 typedef NS_ENUM(NSUInteger, AKErrorDomain) {
     AKErrorDomainNone = 0,
     AKErrorDomainUI,/**<视图*/
@@ -23,6 +27,16 @@ typedef NS_ENUM(NSUInteger, AKErrorSubDomain) {
     AKErrorSubDomainNone = 0,
 };
 
+typedef NS_ENUM(NSUInteger, AKErrorCode) {
+    AKErrorCodeNone = 0,
+};
+
+
+typedef NS_ENUM(NSUInteger, AKErrorSubCode) {
+    AKErrorSubCodeNone = 0,
+};
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol AKErrorProtocol <NSObject>
@@ -30,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  业务模块
  */
-@property (nonatomic, assign) NSUInteger module;
+@property (nonatomic, assign) AKErrorModule module;
 
 /**
  *  业务参数
@@ -77,12 +91,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  错误码
  */
-@property (nonatomic, assign) NSUInteger code;
+@property (nonatomic, assign) AKErrorCode code;
 
 /**
  *  错误子码
  */
-@property (nonatomic, assign) NSUInteger subCode;
+@property (nonatomic, assign) AKErrorSubCode subCode;
 
 /**
  *  详情

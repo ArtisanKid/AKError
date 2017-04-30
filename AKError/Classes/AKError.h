@@ -11,10 +11,6 @@
 #import "AKEnvironmentProtocol.h"
 #import "AKEUserProtocol.h"
 
-typedef NS_ENUM(NSUInteger, AKErrorModule) {
-    AKErrorModuleNone = 0,
-};
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AKError : NSObject<AKErrorProtocol>
@@ -22,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  业务模块
  */
-@property (nonatomic, assign) AKErrorModule module;
+@property (nonatomic, assign) NSUInteger module;
 
 /**
  *  业务参数
@@ -59,12 +55,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  功能域
  */
-@property (nonatomic, assign) AKErrorDomain domain;
+@property (nonatomic, assign) NSUInteger domain;
 
 /**
  *  功能子域
  */
-@property (nonatomic, assign) AKErrorSubDomain subDomain;
+@property (nonatomic, assign) NSUInteger subDomain;
 
 /**
  *  错误码
